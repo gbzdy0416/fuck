@@ -31,7 +31,7 @@ if __name__ == '__main__':
     app.run()
 
 
-@app.route("/check", methods=["GET"])
+@app.route("/check")
 def check():
     if not os.path.exists("app-secret.key"):
         return render_template("check.html", ln="invalid!")
