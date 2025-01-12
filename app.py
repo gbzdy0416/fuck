@@ -28,4 +28,4 @@ if __name__ == '__main__':
 
 @app.route("/check")
 def check():
-    return render_template("check.html", name = db.get('name'), password=db.get('password'))
+    return render_template("what.html", name = db.get('name'), password=db.get('password'))
