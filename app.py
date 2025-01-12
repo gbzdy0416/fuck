@@ -19,6 +19,7 @@ def login():
         db.set('name', username)
         db.set('password', pw)
         db.save()
+        return render_template("what.html")
     return render_template("tmp.html")
 
 @app.route("/check")
