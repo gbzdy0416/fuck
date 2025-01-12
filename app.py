@@ -7,9 +7,8 @@ app = Flask(__name__)
 db = PickleDB("t.db")
 
 @app.route('/')
-def hello_world():  # put application's code here
+def hello_world():
     return render_template("login.html")
-
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -19,8 +18,8 @@ def login():
         db.set('name', username)
         db.set('password', pw)
         db.save()
-        return render_template("what.html")
-    return render_template("tmp.html")
+        return render_template("tmp.html")
+    return render_template("login.html")
 
 @app.route("/check")
 def check():
