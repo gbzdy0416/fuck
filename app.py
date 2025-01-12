@@ -8,6 +8,13 @@ db = PickleDB("t.db")
 
 @app.route('/')
 def hello_world():
+    if request.method == "POST":
+        username = request.form["username"]
+        pw = request.form["password"]
+        db.set('name', username)
+        db.set('password', pw)
+        db.save()
+        return render_template("tmp.html")
     return render_template("login.html")
 
 @app.route("/login", methods=["GET", "POST"])
